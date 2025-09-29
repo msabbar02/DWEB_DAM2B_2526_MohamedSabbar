@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 10-1</title>
+</head>
+<body>
+
+
+    <script>
+        // declaro im array de colores que quiero usar  
+        const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray', 'black'];
+        
+        // una funcion para obtener un color aleatorio del array
+        function getRandomColor() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            return colors[randomIndex];
+        }
+
+        // una funcion para cambiar el color de fondo de la pagina
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = getRandomColor();
+        }
+
+        // cambiar el color de la pagina cada vez se carga
+        window.onload = changeBackgroundColor;
+    </script>
+</body>
+</html>
