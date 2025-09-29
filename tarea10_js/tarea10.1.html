@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 10.1 JS</title>
+</head>
+<body>
+
+    <h1>Tarea 10.1 Learn JS</h1>
+    <p id="f_Declarada"></p>
+    <p id="f_Expresada"></p>
+    <p id="f_Flecha"></p>
+
+    <script>
+        let numeroPar = window.prompt("Introduce un número para saber si es par o impar");
+        //Función declarada
+        function esPar(num){
+            if(num % 2 == 0){
+                return "El numero " + num + " es par";
+            }else
+                return "El numero " + num + " es impar";
+        }
+        document.getElementById("f_Declarada").innerHTML = esPar(numeroPar);
+
+        //Función expresada
+        const esPar2 = function(num){
+            if(num % 2 == 0)
+                return "El numero " + num + " es par";
+            else
+                return "El numero " + num + " es impar";
+        }
+        document.getElementById("f_Expresada").innerHTML = esPar2(numeroPar);
+        
+        //Función flecha
+        const esPar3 = (num) => {
+            if(num % 2 == 0)
+                return "El numero " + num + " es par";
+            else
+                return "El numero " + num + " es impar";
+        }
+        document.getElementById("f_Flecha").innerHTML = esPar3(numeroPar);
+
+    </script>
+    
+</body>
+</html>
