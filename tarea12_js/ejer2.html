@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejer2 - Objeto con setter básico</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; }
+    input { padding: .4rem; width: 10rem; }
+    button { padding: .5rem .75rem; margin-left: .5rem; }
+  </style>
+</head>
+<body>
+  <h2>Ejer2: Definir objeto y establecer valor con set</h2>
+  <div>
+    <input id="nuevoNombre" type="text" placeholder="Nuevo nombre" />
+    <button id="btnSet">Establecer</button>
+  </div>
+  <p>Nombre actual: <strong id="nombreActual">(sin asignar)</strong></p>
+
+  <script>
+    // Objeto simple con una propiedad privada _nombre y un setter "nombre"
+    const usuario = {
+      _nombre: '',
+      set nombre(valor) {
+        this._nombre = String(valor);
+      },
+      get nombre() {
+        return this._nombre;
+      }
+    };
+
+    const input = document.getElementById('nuevoNombre');
+    const btn = document.getElementById('btnSet');
+    const salida = document.getElementById('nombreActual');
+
+    btn.addEventListener('click', function() {
+      usuario.nombre = input.value; // uso del setter
+      salida.textContent = usuario.nombre; // uso del getter
+    });
+  </script>
+</body>
+</html>
+
+
