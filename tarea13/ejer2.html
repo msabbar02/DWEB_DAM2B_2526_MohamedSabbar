@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarea13 - Ejer2 Añadir propiedad a personaje2</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; }
+    ul { line-height: 1.8; }
+  </style>
+</head>
+<body>
+  <h2>Ejer2: Nacionalidad solo en personaje2</h2>
+  <h3>personaje1</h3>
+  <ul id="p1"></ul>
+  <h3>personaje2</h3>
+  <ul id="p2"></ul>
+
+  <script>
+    function Personaje(primerNombre, edadAnios, estadoCivil) {
+      this.primerNombre = primerNombre;
+      this.edadAnios = edadAnios;
+      this.estadoCivil = estadoCivil;
+    }
+
+    const personaje1 = new Personaje('Ana', 25, 'soltera');
+    const personaje2 = new Personaje('Luis', 30, 'casado');
+
+    // Agregar propiedad solo a personaje2
+    personaje2.nacionalidad = 'Española';
+
+    function pinta(id, obj) {
+      let html = '';
+      for (const k in obj) {
+        html += `<li>${k}: <strong>${obj[k]}</strong></li>`;
+      }
+      document.getElementById(id).innerHTML = html;
+    }
+    pinta('p1', personaje1);
+    pinta('p2', personaje2);
+  </script>
+</body>
+</html>
+
+
