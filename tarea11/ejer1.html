@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejer1 - Objeto coche</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; }
+  </style>
+</head>
+<body>
+  <h2>Ejer1: Objeto literal coche</h2>
+  <ul id="salida"></ul>
+
+  <script>
+    const coche = { puertas: 2, ruedas: 4, color: 'azul' };
+    const salida = document.getElementById('salida');
+    salida.innerHTML = `
+      <li>Puertas: <strong>${coche.puertas}</strong></li>
+      <li>Ruedas: <strong>${coche.ruedas}</strong></li>
+      <li>Color: <strong>${coche.color}</strong></li>
+    `;
+  </script>
+</body>
+</html>
+
+
