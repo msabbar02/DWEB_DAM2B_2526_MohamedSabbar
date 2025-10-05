@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ocultar/Mostrar párrafo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; }
+    .controls { display: flex; gap: .5rem; margin-top: 1rem; }
+    button { padding: .5rem .75rem; }
+  </style>
+</head>
+<body>
+  <p id="p">Este es el párrafo que se puede ocultar y mostrar.</p>
+  <div class="controls">
+    <button id="btn-ocultar">Ocultar</button>
+    <button id="btn-mostrar">Mostrar</button>
+  </div>
+  <script>
+    document.getElementById('btn-ocultar').onclick = function() {
+      document.getElementById('p').style.display = 'none';
+    };
+    document.getElementById('btn-mostrar').onclick = function() {
+      document.getElementById('p').style.display = 'inline';
+    };
+  </script>
+</body>
+</html>
+
+
