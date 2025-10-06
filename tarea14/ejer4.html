@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parrafo"></p>
+    <script>
+        let A = [1, 2, 3, 4, 5];
+        let B = [6, 7, 8, 9, 10];
+        let c = [];
+
+        for (let i = 0; i < A.length; i++) {
+            c.push(A[i] + B[i]);
+        }
+        document.getElementById("parrafo").innerHTML = c;
+
+    </script>
+</body>
+</html>
