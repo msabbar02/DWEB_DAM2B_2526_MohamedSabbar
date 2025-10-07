@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarea 15 - Análisis de Texto</title>
+</head>
+<body>
+    
+    <textarea id="texto" rows="5" cols="50" placeholder="Escribe tu texto aquí..."></textarea>
+    <br><br>
+    
+    <button onclick="analizar()">Analizar Texto</button>
+    
+    <div id="resultados"></div>
+
+    <script>
+        function analizar() {
+            // Obtener el texto del textarea
+            var texto = document.getElementById('texto').value;
+            
+            // Usar split() para dividir en palabras
+            var palabras = texto.split(' ');
+            
+            // Filtrar palabras vacías
+            var palabrasLimpias = [];
+            for (var i = 0; i < palabras.length; i++) {
+                if (palabras[i] !== '') {
+                    palabrasLimpias.push(palabras[i]);
+                }
+            }
+            
+            // Mostrar resultados
+            var resultados = document.getElementById('resultados');
+            resultados.innerHTML = '<h2>Manejando Arrays ...</h2>' +
+                '<p><strong>Número de palabras:</strong> ' + palabrasLimpias.length + '</p>' +
+                '<p><strong>Primera palabra:</strong> ' + (palabrasLimpias[0] || 'No hay palabras') + '</p>' +
+                '<p><strong>Última palabra:</strong> ' + (palabrasLimpias[palabrasLimpias.length - 1] || 'No hay palabras') + '</p>' +
+                '<p><strong>Palabras en orden inverso:</strong> ' + palabrasLimpias.slice().reverse().join(', ') + '</p>' +
+                '<p><strong>Palabras ordenadas A-Z:</strong> ' + palabrasLimpias.slice().sort().join(', ') + '</p>' +
+                '<p><strong>Palabras ordenadas Z-A:</strong> ' + palabrasLimpias.slice().sort().reverse().join(', ') + '</p>';
+        }
+    </script>
+</body>
+</html>
