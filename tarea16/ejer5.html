@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Tarea 16 - Métodos map() y filter()</title>
+</head>
+
+<body>
+  <h1>Métodos map() y filter() con Arrays</h1>
+
+  <button onclick="ejecutarEjercicio()">Ejecutar Ejercicio</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function ejecutarEjercicio() {
+      const usuarios = [
+        { nombre: "Ana", actividad: 120, premium: true },
+        { nombre: "Luis", actividad: 50, premium: false },
+        { nombre: "Marta", actividad: 200, premium: true },
+        { nombre: "Jorge", actividad: 80, premium: false },
+      ];
+
+      const usuariosConPuntos = usuarios.map(function (usuario) {
+        let puntos = 0;
+        if (usuario.premium) {
+          puntos = usuario.actividad * 10;
+        } else {
+          puntos = usuario.actividad * 5;
+        }
+        return { nombre: usuario.nombre, puntos: puntos };
+      });
+
+      const usuariosConAltaPuntuacion = usuariosConPuntos.filter(function (
+        usuario
+      ) {
+        return usuario.puntos > 1000;
+      });
+
+      for (let i = 0; i < usuariosConAltaPuntuacion.length; i++) {
+        document.getElementById(
+          "resultado"
+        ).innerHTML += `<p>${usuariosConAltaPuntuacion[i].nombre}</p>`;
+        document.getElementById(
+          "resultado"
+        ).innerHTML += `<p>${usuariosConAltaPuntuacion[i].puntos}</p>`;
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -20,7 +20,7 @@
             
             // Usar split() para dividir en palabras
             var palabras = texto.split(' ');
-            
+             
             // Filtrar palabras vacías
             var palabrasLimpias = [];
             for (var i = 0; i < palabras.length; i++) {
@@ -36,8 +36,8 @@
                 '<p><strong>Primera palabra:</strong> ' + (palabrasLimpias[0] || 'No hay palabras') + '</p>' +
                 '<p><strong>Última palabra:</strong> ' + (palabrasLimpias[palabrasLimpias.length - 1] || 'No hay palabras') + '</p>' +
                 '<p><strong>Palabras en orden inverso:</strong> ' + palabrasLimpias.slice().reverse().join(', ') + '</p>' +
-                '<p><strong>Palabras ordenadas A-Z:</strong> ' + palabrasLimpias.slice().sort().join(', ') + '</p>' +
-                '<p><strong>Palabras ordenadas Z-A:</strong> ' + palabrasLimpias.slice().sort().reverse().join(', ') + '</p>';
+                '<p><strong>Palabras ordenadas A-Z:</strong> ' + palabrasLimpias.slice().sort().join('...') + '</p>' +
+                '<p><strong>Palabras ordenadas Z-A:</strong> ' + palabrasLimpias.slice().sort().reverse().join('...') + '</p>';
         }
     </script>
 </body>

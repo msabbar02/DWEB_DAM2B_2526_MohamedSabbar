@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Tarea 16 - Ejer4</h2>
+    <div id="parrafo"></div>
+
+    <script>
+      const ventas = [
+        { producto: "Laptop", cantidad: 3, precio: 1000 },
+        { producto: "Monitor", cantidad: 5, precio: 200 },
+        { producto: "Teclado", cantidad: 10, precio: 50 },
+      ];
+
+      const totalIngresos = ventas.reduce((acc, venta) => acc + venta.cantidad * venta.precio, 0);
+      const totalProductos = ventas.reduce((acc, venta) => acc + venta.cantidad, 0);
+      const productosVendidos = ventas.map(venta => venta.producto);
+      
+      document.getElementById("parrafo").innerHTML = `
+      <p>Total Ingresos: ${totalIngresos}</p>
+      <p>Total Productos: ${totalProductos}</p>
+      <p>Productos Vendidos: ${productosVendidos}</p>
+      `;
+
+    </script>
+  </body>
+</html>

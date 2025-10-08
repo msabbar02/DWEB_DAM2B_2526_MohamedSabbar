@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <p id="parrafo"></p>
+    <h2>Proyectos</h2>
+    <div id="parrafo"></div>
 
     <script>
         const proyectos = [
@@ -19,6 +20,23 @@
             { nombre: "API interna", horasEstimadas: 50, horasReales: 60 }
         ];
 
+        let nombre = proyectos.map(proyecto => proyecto.nombre);
+        let horasReales = proyectos.map(proyecto => proyecto.horasReales);
+        let horasEstimadas = proyectos.map(proyecto => proyecto.horasEstimadas);
+
+        let desviacion = [];
+        for (let i = 0; i < proyectos.length; i++) {
+            desviacion.push((horasReales[i] / horasEstimadas[i]) * 100 - 100);
+        }
+
+        for (let i = 0; i < proyectos.length; i++) {
+            document.getElementById("parrafo").innerHTML += `
+            <p>Nombre: ${nombre[i]}</p>
+            <p>Horas Reales: ${horasReales[i]}</p>
+            <p>Horas Estimadas: ${horasEstimadas[i]}</p>
+            <p>Desviacion: ${desviacion[i]}</p>
+            `;
+        }
         
 
     </script>
