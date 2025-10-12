@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 6</h2>
+    <div id="resultados"></div>
+
+    <script>
+        const estudiantes = [
+            { nombre: "Ana", notas: [7, 8, 9] },
+            { nombre: "Luis", notas: [5, 6, 4] },
+            { nombre: "Marta", notas: [9, 10, 9] },
+            { nombre: "Jorge", notas: [6, 5, 7] }
+        ];
+
+        // filtrar solo los estudiantes qur su nota media mayor o igual a 7
+        const aprobados = estudiantes.filter(est => {
+            const media = est.notas.reduce((a, b) => a + b, 0) / est.notas.length;
+            return media >= 7
+        });
+
+        // calcular el promedio general de los estudiantes 
+        const promedioGeneral = aprobados.reduce((acc, est) => {
+            const media = est.notas.reduce((a, b) => a + b, 0) / est.notas.length;
+            return acc + media;
+        }, 0) / aprobados.length;
+
+
+        
+        const divResultado = document.getElementById("resultados");
+
+        // Lista de aprobados
+        aprobados.forEach(est => {
+            const media = est.notas.reduce((a, b) => a + b, 0) / est.notas.length;
+            const p = document.createElement("p");
+            p.textContent = `${est.nombre} tiene una media de: ${media.toFixed(2)}`;
+            divResultado.appendChild(p);
+        });
+
+        // Promedio general
+        const pGeneral = document.createElement("p");
+        pGeneral.textContent = `Promedio general de los aprobados: ${promedioGeneral.toFixed(2)}`;
+        divResultado.appendChild(pGeneral);
+    </script>
+
+</body>
+</html>
