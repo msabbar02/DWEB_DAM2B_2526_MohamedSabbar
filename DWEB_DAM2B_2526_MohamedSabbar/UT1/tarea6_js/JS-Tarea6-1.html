@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Números</h1>
+    
+    <p>Ingresa dos números y te diré qué operaciones hacer.</p>
+
+    <button onclick="calcular()">Comenzar</button>
+
+    <div id="resultado" style="display: none;"></div>
+
+    <script>
+        function calcular() {
+            const num1 = parseInt(prompt("Primer número:"));
+            const num2 = parseInt(prompt("Segundo número:"));
+            
+            const resultado = document.getElementById("resultado");
+            
+            if (num1 > num2) {
+                const suma = num1 + num2;
+                const resta = num1 - num2;
+                resultado.innerHTML = `Suma: ${suma}<br>Resta: ${resta}`;
+            } else if (num1 === num2) {
+                resultado.innerHTML = "Los números son iguales";
+            } else {
+                const multiplicacion = num1 * num2;
+                const division = num2 / num1;
+                resultado.innerHTML = `Multiplicación: ${multiplicacion}<br>División: ${division}`;
+            }
+            
+            resultado.style.display = "block";
+        }
+    </script>
+</body>
+</html>

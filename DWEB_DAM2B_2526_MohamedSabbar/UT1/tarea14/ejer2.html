@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parrafo"></p>
+
+    <script>
+        const numeros = [];
+        const multiplicador = 5;
+        let mensaje = "";
+        for (let i = 0; i < 5; i++) {
+            numeros.push(window.prompt("Ingrese un numero"));
+        }
+        for (let i = 0; i < 5; i++) {
+            mensaje += numeros[i] + " * " + multiplicador + " = " + numeros[i] * multiplicador+ " ,";
+        }
+        document.getElementById("parrafo").innerHTML = mensaje;
+    </script>
+</body>
+</html>

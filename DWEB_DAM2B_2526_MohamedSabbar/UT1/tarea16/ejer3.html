@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Tarea 16 - Ejer3</h2>
+    <div id="parrafo"></div>
+
+    <script>
+        //array de tareas
+      const tareas = [
+        { titulo: "Diseño UI", prioridad: "alta", completada: true },
+        { titulo: "Backend API", prioridad: "media", completada: false },
+        { titulo: "Testing", prioridad: "alta", completada: false },
+        { titulo: "Documentación", prioridad: "baja", completada: true },
+      ];
+        //filtrar las tareas completadas y con prioridad alta
+      const tareasCompletadas = tareas.filter(
+        (tarea) => tarea.completada && tarea.prioridad === "alta"
+      );
+      // iterar las tareas y filtrar las que tienen prioridad alta y estan completadas.
+
+      for (let i = 0; i < tareasCompletadas.length; i++) {
+        document.getElementById("parrafo").innerHTML += `
+        <p>Tarea: ${tareasCompletadas[i].titulo}</p>
+        <p>Prioridad: ${tareasCompletadas[i].prioridad}</p>
+        <p>Completada: ${tareasCompletadas[i].completada}</p>
+        `;
+      }
+    </script>
+  </body>
+</html>

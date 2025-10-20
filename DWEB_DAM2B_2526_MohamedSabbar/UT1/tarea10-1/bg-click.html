@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cambiar color de fondo al cargar</title>
+</head>
+<body>
+  <div>El color de fondo cambia aleatoriamente al cargar la página</div>
+  <script>
+    // Array sencillo de colores
+    const colores = ["#FF5733", "#33FF57", "#3357FF", "#F7DC6F", "#A569BD", "#48C9B0", "#F1948A"];
+    // Al cargar la página, elige uno al azar y lo pone de fondo
+    const color = colores[Math.floor(Math.random() * colores.length)];
+    document.body.style.backgroundColor = color;
+  </script>
+</body>
+</html>
+
+

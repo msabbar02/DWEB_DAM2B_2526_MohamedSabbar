@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejer3 - Getters/Setters con defineProperty</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; }
+    button { padding: .5rem .75rem; margin-right: .5rem; margin-top: .5rem; }
+  </style>
+</head>
+<body>
+  <h2>Ejer3: Contador con Object.defineProperty</h2>
+  <p>Valor actual: <strong id="valor">0</strong></p>
+  <div>
+    <button id="btnReset">reset (get)</button>
+    <button id="btnInc">increment (get)</button>
+    <button id="btnDec">decrement (get)</button>
+  </div>
+  <div>
+    <button id="btnAdd">add = 5 (set)</button>
+    <button id="btnSub">subtract = 1 (set)</button>
+  </div>
+
+  <script>
+    // Objeto base
+    let obj = { counter: 0 };
+
+    // Definimos propiedades con getters y setters
+    Object.defineProperty(obj, 'reset', {
+      get: function() { this.counter = 0; }
+    });
+
+    Object.defineProperty(obj, 'increment', {
+      get: function() { this.counter++; }
+    });
+
+    Object.defineProperty(obj, 'decrement', {
+      get: function() { this.counter--; }
+    });
+
+    Object.defineProperty(obj, 'add', {
+      set: function(value) { this.counter += value; }
+    });
+
+    Object.defineProperty(obj, 'subtract', {
+      set: function(value) { this.counter -= value; }
+    });
+
+    const out = document.getElementById('valor');
+    function render() { out.textContent = obj.counter; }
+
+    document.getElementById('btnReset').addEventListener('click', function(){ obj.reset; render(); });
+    document.getElementById('btnInc').addEventListener('click', function(){ obj.increment; render(); });
+    document.getElementById('btnDec').addEventListener('click', function(){ obj.decrement; render(); });
+    document.getElementById('btnAdd').addEventListener('click', function(){ obj.add = 5; render(); });
+    document.getElementById('btnSub').addEventListener('click', function(){ obj.subtract = 1; render(); });
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funciones simples (básico JS)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; }
+    .card { margin-bottom: 1.5rem; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; }
+    input { width: 6rem; padding: .4rem; }
+    button { padding: .5rem .75rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3>Mayor de tres</h3>
+    <input id="a" type="number" placeholder="A">
+    <input id="b" type="number" placeholder="B">
+    <input id="c" type="number" placeholder="C">
+    <button id="btn1">Calcular</button>
+    <div>Resultado: <strong id="res1">-</strong></div>
+  </div>
+
+  <div class="card">
+    <h3>Perímetro de un cuadrado</h3>
+    <input id="lado" type="number" placeholder="Lado">
+    <button id="btn2">Calcular</button>
+    <div>Perímetro: <strong id="res2">-</strong></div>
+  </div>
+
+  <div class="card">
+    <h3>Cantidad de dígitos</h3>
+    <input id="num" type="number" placeholder="Número">
+    <button id="btn3">Calcular</button>
+    <div>Dígitos: <strong id="res3">-</strong></div>
+  </div>
+
+  <div class="card">
+    <h3>Promedio de tres</h3>
+    <input id="p1" type="number" placeholder="A">
+    <input id="p2" type="number" placeholder="B">
+    <input id="p3" type="number" placeholder="C">
+    <button id="btn4">Calcular</button>
+    <div>Promedio: <strong id="res4">-</strong></div>
+  </div>
+
+  <div class="card">
+    <h3>Suma de 5 valores</h3>
+    <input id="s1" type="number" placeholder="1">
+    <input id="s2" type="number" placeholder="2">
+    <input id="s3" type="number" placeholder="3">
+    <input id="s4" type="number" placeholder="4">
+    <input id="s5" type="number" placeholder="5">
+    <button id="btn5">Sumar</button>
+    <div>Total: <strong id="res5">-</strong></div>
+  </div>
+
+  <script>
+    // Todo en JS básico, sin funciones extra
+    document.getElementById('btn1').onclick = function() {
+      var a = Number(document.getElementById('a').value);
+      var b = Number(document.getElementById('b').value);
+      var c = Number(document.getElementById('c').value);
+      var mayor = a;
+      if (b > mayor) mayor = b;
+      if (c > mayor) mayor = c;
+      document.getElementById('res1').textContent = mayor;
+    };
+
+    document.getElementById('btn2').onclick = function() {
+      var lado = Number(document.getElementById('lado').value);
+      document.getElementById('res2').textContent = lado * 4;
+    };
+
+    document.getElementById('btn3').onclick = function() {
+      var n = document.getElementById('num').value;
+      document.getElementById('res3').textContent = n.length;
+    };
+
+    document.getElementById('btn4').onclick = function() {
+      var p1 = Number(document.getElementById('p1').value);
+      var p2 = Number(document.getElementById('p2').value);
+      var p3 = Number(document.getElementById('p3').value);
+      var prom = (p1 + p2 + p3) / 3;
+      document.getElementById('res4').textContent = prom;
+    };
+
+    document.getElementById('btn5').onclick = function() {
+      var s1 = Number(document.getElementById('s1').value);
+      var s2 = Number(document.getElementById('s2').value);
+      var s3 = Number(document.getElementById('s3').value);
+      var s4 = Number(document.getElementById('s4').value);
+      var s5 = Number(document.getElementById('s5').value);
+      var suma = s1 + s2 + s3 + s4 + s5;
+      document.getElementById('res5').textContent = suma;
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Proyectos</h2>
+    <div id="parrafo"></div>
+
+    <script>
+        const proyectos = [
+            { nombre: "App móvil", horasEstimadas: 120, horasReales: 150 },
+            {
+                nombre: "Web corporativa", horasEstimadas: 80, horasReales: 75
+            },
+            { nombre: "API interna", horasEstimadas: 50, horasReales: 60 }
+        ];
+
+        let nombre = proyectos.map(proyecto => proyecto.nombre);
+        let horasReales = proyectos.map(proyecto => proyecto.horasReales);
+        let horasEstimadas = proyectos.map(proyecto => proyecto.horasEstimadas);
+
+        let desviacion = [];
+        for (let i = 0; i < proyectos.length; i++) {
+            desviacion.push((horasReales[i] / horasEstimadas[i]) * 100 - 100);
+        }
+
+        for (let i = 0; i < proyectos.length; i++) {
+            document.getElementById("parrafo").innerHTML += `
+            <p>Nombre: ${nombre[i]}</p>
+            <p>Horas Reales: ${horasReales[i]}</p>
+            <p>Horas Estimadas: ${horasEstimadas[i]}</p>
+            <p>Desviacion: ${desviacion[i]}</p>
+            `;
+        }
+        
+
+    </script>
+</body>
+
+</html>

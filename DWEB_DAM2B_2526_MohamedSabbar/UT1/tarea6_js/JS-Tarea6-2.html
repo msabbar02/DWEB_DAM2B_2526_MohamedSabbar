@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor Simple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .words {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e8;
+            border-radius: 3px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Traductor</h1>
+        
+        <div class="words">
+            <h3>Palabras disponibles:</h3>
+            <p>casa, mesa, perro, gato</p>
+        </div>
+
+        <button onclick="translateWord()">Traducir Palabra</button>
+
+        <div id="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        function translateWord() {
+            const palabra = prompt("Ingresa una palabra (casa, mesa, perro, gato):");
+            
+            if (palabra === null) return;
+            
+            const traduccion = getTranslation(palabra);
+            
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = traduccion;
+            resultDiv.style.display = "block";
+        }
+        
+        function getTranslation(palabra) {
+            switch(palabra.toLowerCase().trim()) {
+                case "casa":
+                    return "House";
+                case "mesa":
+                    return "Table";
+                case "perro":
+                    return "Dog";
+                case "gato":
+                    return "Cat";
+                default:
+                    return "Palabra no válida";
+            }
+        }
+    </script>
+</body>
+</html>
