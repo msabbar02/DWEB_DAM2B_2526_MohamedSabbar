@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <button type="button" onclick="myFunction(0)">Letra Grande</button>
+    <button type="button" onclick="myFunction(1)">Letra Pequeña</button>
+    <p>Maria</p>
+    <p>Ana</p>
+    <p>Sanz</p>
+
+    <script>
+    const parrafos = document.querySelectorAll('p');
+    
+    function myFunction(x) {
+        for (let i = 0; i < parrafos.length; i++) {
+            // Get current font size and convert to number
+            const currentSize = parseInt(window.getComputedStyle(parrafos[i]).fontSize);
+            
+            if (x === 0) {
+                // Increase font size
+                parrafos[i].style.fontSize = (currentSize + 20) + "px";
+                parrafos[i].style.color = "blue";
+            } else if (x === 1) {
+                // Decrease font size (ensure it doesn't go below a minimum)
+                parrafos[i].style.fontSize = (Math.max(8, currentSize - 20)) + "px";
+                parrafos[i].style.color = "red";
+            }
+        }
+    }
+</script>
+</body>
+
+</html>
