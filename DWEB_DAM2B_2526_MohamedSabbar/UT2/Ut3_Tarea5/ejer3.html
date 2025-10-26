@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zona</title>
+    <style>
+        #zona { width: 100px; height: 100px; background: #ccc; margin: 10px auto; }
+    </style>
+</head>
+<body>
+    <div id="zona"></div>
+    <select id="opciones">
+        <option value="">Elige</option>
+        <option value="Opción 1">Opción 1</option>
+        <option value="Opción 2">Opción 2</option>
+        <option value="Opción 3">Opción 3</option>
+    </select>
+    <input id="texto">
+    <p id="mensaje">-</p>
+
+    <script>
+        const mensaje = document.getElementById("mensaje");
+
+        document.getElementById("zona").addEventListener("click", () => {
+            mensaje.textContent = "Has hecho clic";
+        });
+
+        document.getElementById("zona").addEventListener("mouseover", () => {
+            mensaje.textContent = "El ratón está encima";
+        });
+
+        document.getElementById("zona").addEventListener("mouseout", () => {
+            mensaje.textContent = "El ratón está fuera";
+        });
+
+        document.getElementById("zona").addEventListener("mousedown", () => {
+            mensaje.textContent = "Estás presionando";
+        });
+
+        document.getElementById("zona").addEventListener("mouseup", () => {
+            mensaje.textContent = "Has soltado";
+        });
+
+        document.getElementById("opciones").addEventListener("change", () => {
+            mensaje.textContent = "Has cambiado la selección";
+        });
+
+        document.getElementById("texto").addEventListener("focus", () => {
+            mensaje.textContent = "Has enfocado el campo";
+        });
+    </script>
+</body>
+</html>
