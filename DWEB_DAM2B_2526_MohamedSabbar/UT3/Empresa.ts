@@ -1,34 +1,24 @@
-class Empresa{
+import {Empleado} from "./Empleado";
+
+export class Empresa{
     nombre: string;
-    empleados: Array<Empleado>;
+    empleados: Empleado[];
 
-    constructor(emppleados : Array<Empleado>){
-        this.empleados = emppleados;
+    constructor(nombre: string ){
+        this.nombre = nombre;
+        this.empleados = [];
     }
-
 
     anadirEmpleado(empleado : Empleado): void{
             this.empleados.push(empleado);
     }
 
-
     mostrarinfo(): void{
-        this.empleados.forEach(emp => {
-            emp.mostrarInfo();
-        });
+        console.log(`Empresa: ${this.nombre}`);
+        this.empleados.forEach(emp => emp.mostrarInfo);
     }
 
     calcularCoste(): number{
-        let coste = Number;
-        this.empleados.forEach(emp => {
-            
-        });
-
-        return coste;
+        return this.empleados.reduce((acc,emp) => acc+emp.calcularSalarioAnual(),0)
     }
-     
-
-
-
-
 }

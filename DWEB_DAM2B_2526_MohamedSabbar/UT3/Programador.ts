@@ -1,5 +1,6 @@
+import { Empleado } from "./Empleado";
 
-class Programador extends Empleado{
+export class Programador extends Empleado{
     lenguajePrincipal : string;
     proyectos : number;
 
@@ -14,13 +15,10 @@ class Programador extends Empleado{
         console.log(`lenguaje Principal: ${this.lenguajePrincipal}, Numero de Proyectos:${this.proyectos}`);
     }
 
-    anadirBonus(): number {
-       if(this.proyectos >= 10){
-            this.salario *= 0.1;
-        }else{
-            this.salario *= 0.05;
+    calcularSalarioAnual(): number {
+        // añadir bonus se su proyectos mayor igual a 5
+        const base = this.salario * 12;
+        const bonus = this.proyectos >= 5 ? base * 0.1 : 0;
+        return base + bonus;
         }
-        return this.salario * 12;
-        
-    }
 }

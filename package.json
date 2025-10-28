@@ -1,0 +1,23 @@
+{
+  "name": "dweb_dam2b_2526_mohamedsabbar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msabbar02/DWEB_DAM2B_2526_MohamedSabbar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msabbar02/DWEB_DAM2B_2526_MohamedSabbar/issues"
+  },
+  "homepage": "https://github.com/msabbar02/DWEB_DAM2B_2526_MohamedSabbar#readme",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
