@@ -1,31 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-        <link rel="stylesheet" type="text/css" href="css/estilo.css" />
-        <title>Ejemplos con PHP - sentencias repetitivas</title>
-    </head>
-    <body>
-        <div id="contenido">
-        <div id="cabecera"><h2>Ejemplos con PHP - sentencias repetitivas</h2></div>
-        <div id="principal">
-                <?php
-                echo"<h3>Lista de Veñtas con for</h3>";
-                echo"<ul>";
-                    for ($i = 1; $i <= 10; $i++) {
-                        echo "<li>Literacion {$i}</li>";
-                    }
-                  echo "</ul>";
-                  echo"<h3>Lista de Veñtas con While</h3>";
-                echo"<ol>";
-                    for ($i = 1; $i <= 10; $i++) {
-                        echo "<li>Literacion {$i}</li>";
-                    }
-                  echo "</ol>";
-                ?>       
-        </div>
-         <div id="pie">Implantaci&oacute;n de aplicaciones web</div>
-        </div>
-    </body>
-</html>
+<?php
+include("cabezera.php");
+echo "<h3>Lista de Veñtas con for</h3>";
+echo "<ul>";
+for ($i = 1; $i <= 10; $i++) {
+    echo "<li>Literacion {$i}</li>";
+}
+echo "</ul>";
+echo "<h3>Lista de Veñtas con While</h3>";
+echo "<ol>";
+for ($i = 1; $i <= 10; $i++) {
+    echo "<li>Literacion {$i}</li>";
+}
+echo "</ol>";
+include("pie.php");
+?>

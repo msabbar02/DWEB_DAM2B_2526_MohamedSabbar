@@ -63,10 +63,21 @@ hr {
     font-size: smaller;
     font-weight: bold;
 }
+/* Estilo para las filas PARES */
+#principal table tr.par {
+    background-color: #b0e0e6; /* Un azul clarito (PowderBlue) para diferenciar */
+    border: 1px solid rgb(14, 36, 156);
+}
 
-
-#principal table td {
+/* Estilo para las filas IMPARES */
+#principal table tr.impar {
+    background-color: #ffffff; /* Blanco */
     border: 1px solid cadetblue;
+}
+
+
+#principal table td  {
+    border: 1px solid cadetblue;/*cadeblue*/
     padding: 5px;
 }
 #principal p {
